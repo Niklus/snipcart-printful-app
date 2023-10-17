@@ -15,17 +15,19 @@ body {
   left: 0;
   box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.091);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: #cacaca;
   font-weight: 100;
   text-transform: uppercase;
   letter-spacing: 0.3em;
+  padding: 10px;
+  margin-bottom: 30px;
 }
 .body {
   height: 100vh;
   width: 100%;
-  padding-top: 120px;
+  margin-top: 100px;
 }
 .container {
   padding-top: 20px;
@@ -103,7 +105,7 @@ body {
   border-top: 0.5px solid #ececec;
   letter-spacing: 0.1em;
   font-size: 11px;
-  color: white;
+  color: black;
   justify-items: left;
   align-items: center;
   display: flex;
@@ -128,4 +130,41 @@ body {
 .lnr.lnr-cart img:hover {
   background-color: #eee;
   padding: 1px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-right: 30px;
+}
+
+.nav a {
+  color: #072837;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-content {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 720px) {
+  .nav {
+    display: none;
+  }
+
+  .title a img {
+    height: 80px;
+  }
+
+  .header {
+    height: 40px;
+  }
+
+  .body {
+    margin-top: 40px;
+  }
 }

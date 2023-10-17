@@ -1,9 +1,14 @@
-const nav = ({ title }) => {
-  return /*html*/ `<div class="header">
-  <div class="title">
-    <h4>${title}</h4>
+const nav = /*html*/ `<div class="header">
+    <div class="title">
+      <a href="/">
+        <img src="logo.png" height="120px"/>
+      </a>
+    </div>
+    <div class="nav">
+      <a href="/">HOME</a> |
+      <a href="/about">ABOUT</a> 
+    </div>
   </div>
-</div>`;
-};
+`;
 
 export default nav;

@@ -1,49 +1,16 @@
 import { makeScript } from "../utils/makeScript.js";
 import nav from "../components/nav.js";
+import card from "../components/card.js";
 
 export const home = ({ title, products }) => {
   return /*html*/ `
-    <title>${title}</title>
+    <title>CanvaSplash | ${title}</title>
     </head>
     <body>
-      ${nav({ title })}
+      ${nav}
         <div class="body">
-          <div class="container">
-            ${products
-              .map(
-                (product) => /*html*/ `
-                <div class="card">
-                  <div class="card-content">
-                    <div class="top-bar">
-                      <span>$ 30.00</span>
-                    </div>
-                    <div class="img">
-                      <img
-                      src="${product.thumbnail_url}"
-                      alt="${product.name}"
-                      />
-                    </div>
-                  </div>
-                  <div class="card-description">
-                    <div class="title">${product.name}</div>
-                    <div class="cart">
-                      <span class="lnr lnr-cart snipcart-add-item"
-                      data-item-id="${product.id}"
-                      data-item-price="30.00"
-                      data-item-description="${product.name}"
-                      data-item-image="${product.thumbnail_url}"
-                      data-item-name="${product.name}">
-                        <img src="cart.svg" />
-                      </span>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <!--<div class="span">Sold Out</div>-->
-                    <div class="span">Sale!</div>
-                  </div>
-                </div>`
-              )
-              .join("")}
+          <div class="container" id="my-gallery">
+            ${products.map((product) => `${card({ product })}`).join("")}
           </div>
         </div>
       ${script}
@@ -59,8 +26,14 @@ const script = await makeScript(() => {
       "YTk5NWQ3MzYtNjI5MS00MDAxLWIzOGQtN2QyMGVhM2U4ODY0NjM4MzMwMzEwMTUzMDU4ODEw",
     loadStrategy: "on-user-interaction",
   };
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#my-gallery",
+    children: ".card-content",
+    pswpModule: PhotoSwipe,
+  });
+
+  lightbox.init();
 });
 
-const style = /* css */ `
-  
-`;
+const style = /* css */ ``;
