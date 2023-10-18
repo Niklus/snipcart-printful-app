@@ -2,7 +2,7 @@ import { makeScript } from "../utils/makeScript.js";
 import nav from "../components/nav.js";
 import card from "../components/card.js";
 
-export const home = ({ title, products }) => {
+export const home = ({ title, products, nonce }) => {
   return /*html*/ `
     <title>CanvaSplash | ${title}</title>
     </head>
@@ -13,8 +13,8 @@ export const home = ({ title, products }) => {
             ${products.map((product) => `${card({ product })}`).join("")}
           </div>
         </div>
-      ${script}
-      <script src="/snipcart.min.js"></script>
+      <script nonce="${nonce}">${script}</script>
+      <script nonce="${nonce}" src="/snipcart.min.js"></script>
     </body>
     </html>
   `;

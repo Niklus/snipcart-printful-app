@@ -1,7 +1,7 @@
 import * as pages from "./pages/index.js";
 
-export default (ctx, next) => {
-  ctx.render = (page, data) => /*html*/ `<!DOCTYPE html>
+export default (ctx) => {
+  return (page, data) => /*html*/ `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="utf-8">
@@ -10,15 +10,17 @@ export default (ctx, next) => {
         <link 
           rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css"
+          nonce="${ctx.state.nonce}"
         />
         <script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js">
+          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js"
+          nonce="${ctx.state.nonce}">
         </script>
         <script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe.umd.min.js">
+          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe.umd.min.js"
+          nonce="${ctx.state.nonce}">
         </script>
-        <link rel="stylesheet" href="style.css" />
-        ${pages[page](data)}
+        <link rel="stylesheet" href="style.css" nonce="${ctx.nonce}" />
+        ${pages[page]({ ...data, nonce: ctx.state.nonce })}
   `;
-  return next();
 };

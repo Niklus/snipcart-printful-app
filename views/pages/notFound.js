@@ -5,9 +5,7 @@ export const notFound = ({ title }) => {
     </head>
     <body>
       ${nav}
-      <main>
-        <h1>${title}: 404</h1>
-      </main>
+        <h1 class="not-found">${title}: 404</h1>
     </body>
     </html>
   `;

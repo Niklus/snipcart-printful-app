@@ -1,8 +1,8 @@
 import nav from "../components/nav.js";
 
-export const about = ({ title }) => {
+export const about = ({ title, nonce }) => {
   return /*html*/ `<title>CanvaSplash | ${title}</title>
-    <style>${style}</style>
+    <style nonce="${nonce}">${style}</style>
     </head>
     <body>
       ${nav}
