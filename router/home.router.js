@@ -8,7 +8,7 @@ export const homeRouter = new Router();
 const PRINTFUL_API_TOKEN = Deno.env.get("PRINTFUL_API_TOKEN");
 
 homeRouter.get("/", async (ctx) => {
-  try {
+  /*try {
     const response = await fetch("https://api.printful.com/store/products", {
       method: "GET",
       headers: {
@@ -21,7 +21,8 @@ homeRouter.get("/", async (ctx) => {
     ctx.body = ctx.render("home", { title: "Home", products: result ?? [] });
   } catch (error) {
     console.log(error);
-  }
+  }*/
+  ctx.body = ctx.render("home", { title: "Home", products: [] });
 });
 
 // Since printful allows only 120 requests per minute, we need to cache the response
