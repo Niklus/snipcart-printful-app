@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid";
-import helmet from "koa-helmet";
+import { nanoid } from "../deps.js";
+import { helmet } from "../deps.js";
 
 const security = (ctx, next) => {
   ctx.state.nonce = nanoid(32);
@@ -13,6 +13,7 @@ const security = (ctx, next) => {
           "'self'",
           "https://cdn.snipcart.com",
           "https://cdnjs.cloudflare.com",
+          "https://cdn.jsdelivr.net",
           `'nonce-${ctx.state.nonce}'`,
         ],
         styleSrcElem: [
@@ -20,14 +21,22 @@ const security = (ctx, next) => {
           "https://cdn.snipcart.com",
           "https://cdnjs.cloudflare.com",
           "https://fonts.bunny.net/css",
+          "https://cdn.jsdelivr.net",
           `'nonce-${ctx.state.nonce}'`,
         ],
-        imgSrc: ["'self'", "https://files.cdn.printful.com"],
+        imgSrc: [
+          "'self'",
+          "data:",
+          "https://files.cdn.printful.com",
+          "https://cdn.jsdelivr.net",
+        ],
         connectSrc: [
           "'self'",
           "https://app.snipcart.com",
           "https://cdn.snipcart.com",
+          "https://payment.snipcart.com",
         ],
+        frameSrc: ["'self'", "https://payment.snipcart.com"],
       },
     },
   })(ctx, next);

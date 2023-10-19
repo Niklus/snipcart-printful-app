@@ -1,4 +1,4 @@
-import Router from "@koa/router";
+import { Router } from "../deps.js";
 
 export const aboutRouter = new Router({
   prefix: "/about",

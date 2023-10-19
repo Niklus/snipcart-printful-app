@@ -21,8 +21,10 @@ const card = ({ product }) => {
           data-item-price="30.00"
           data-item-description="${product.name}"
           data-item-image="${product.thumbnail_url}"
-          data-item-name="${product.name}">
-          <img src="cart.svg" />
+          data-item-name="${product.name}"
+          data-item-url="/"
+          >
+          <img src="https://cdn.jsdelivr.net/gh/otizi/assets@main/cart.svg" />
         </span>
       </div>
     </div>

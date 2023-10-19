@@ -1,4 +1,4 @@
-import RateLimit from "koa2-ratelimit";
+import { RateLimit } from "../deps.js";
 
 const rateLimit = RateLimit.RateLimit;
 

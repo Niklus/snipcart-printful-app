@@ -1,14 +1,24 @@
-import Router from "@koa/router";
-import { PrintfulClient, request } from "printful-request";
+import { Router } from "../deps.js";
+import { load } from "../deps.js";
 
-const printful = new PrintfulClient(process.env.PRINTFUL_API_TOKEN);
+await load({ export: true });
 
 export const homeRouter = new Router();
 
+const PRINTFUL_API_TOKEN = Deno.env.get("PRINTFUL_API_TOKEN");
+
 homeRouter.get("/", async (ctx) => {
   try {
-    const { result } = await printful.get("store/products");
-    ctx.body = ctx.render("home", { title: "Home", products: result });
+    const response = await fetch("https://api.printful.com/store/products", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${PRINTFUL_API_TOKEN}`,
+      },
+    });
+
+    const { result } = await response.json();
+
+    ctx.body = ctx.render("home", { title: "Home", products: result ?? [] });
   } catch (error) {
     console.log(error);
   }

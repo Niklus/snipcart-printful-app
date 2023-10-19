@@ -1,4 +1,4 @@
-import { minify } from "terser";
+import { minify } from "../../deps.js";
 
 export const makeScript = async (func) => {
   const iife = `(${func.toString()})()`;
