@@ -8,6 +8,8 @@ export { default as CleanCSS } from "npm:clean-css@5.3.2";
 export { default as Router } from "npm:koa-router@12.0.0";
 export { default as helmet } from "npm:koa-helmet@7.0.2";
 export { default as RateLimit } from "npm:koa2-ratelimit@1.1.3";
+export { default as axios } from "npm:axios@1.5.1";
+export { default as mcache } from "npm:memory-cache@0.2.0";
 
 // Deno Modules
 export { load } from "https://deno.land/std@0.203.0/dotenv/mod.ts";
