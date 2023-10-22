@@ -14,9 +14,7 @@ export const home = ({ title, products, nonce }) => {
           </div>
         </div>
       <script nonce="${nonce}">${script}</script>
-      <script 
-        nonce="${nonce}" 
-        src="https://cdn.jsdelivr.net/gh/otizi/assets@main/snipcart.min.js">
+      <script src="https://cdn.jsdelivr.net/gh/otizi/assets@main/snipcart.min.js">
       </script>
     </body>
     </html>

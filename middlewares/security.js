@@ -11,18 +11,18 @@ const security = (ctx, next) => {
         styleSrc: ["'self'", `'nonce-${ctx.state.nonce}'`],
         scriptSrcElem: [
           "'self'",
+          `'nonce-${ctx.state.nonce}'`,
           "https://cdn.snipcart.com",
           "https://cdnjs.cloudflare.com",
           "https://cdn.jsdelivr.net",
-          `'nonce-${ctx.state.nonce}'`,
         ],
         styleSrcElem: [
           "'self'",
+          `'nonce-${ctx.state.nonce}'`,
           "https://cdn.snipcart.com",
           "https://cdnjs.cloudflare.com",
           "https://fonts.bunny.net/css",
           "https://cdn.jsdelivr.net",
-          `'nonce-${ctx.state.nonce}'`,
         ],
         imgSrc: [
           "'self'",

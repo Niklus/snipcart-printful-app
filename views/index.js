@@ -11,24 +11,20 @@ export default (ctx) => {
           rel="icon" 
           type="image/x-icon" 
           href="https://cdn.jsdelivr.net/gh/otizi/assets@main/favicon.ico"
-        >
+        />
         <link 
           rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css"
-          nonce="${ctx.state.nonce}"
         />
         <script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js"
-          nonce="${ctx.state.nonce}">
+          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe-lightbox.umd.min.js">
         </script>
         <script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe.umd.min.js"
-          nonce="${ctx.state.nonce}">
+          src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/umd/photoswipe.umd.min.js">
         </script>
         <link 
           rel="stylesheet" 
           href="https://cdn.jsdelivr.net/gh/otizi/assets@main/style.css" 
-          nonce="${ctx.nonce}" 
         />
         ${pages[page]({ ...data, nonce: ctx.state.nonce })}
   `;
