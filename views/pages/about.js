@@ -5,7 +5,7 @@ export const about = ({ title, nonce }) => {
     <style nonce="${nonce}">${style}</style>
     </head>
     <body>
-      ${nav}
+      ${nav({ title })}
       <div class="body">
         <h2>About</h2>
         <p>

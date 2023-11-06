@@ -38,7 +38,6 @@ export const homePage = async (ctx) => {
   }
 };
 
-/*reset database
 export const resetDb = async (ctx) => {
   try {
     const res = await ctx.kv.atomic().delete(["products"]).commit();
@@ -53,4 +52,3 @@ export const resetDb = async (ctx) => {
     ctx.body = ctx.render("error", { title: "Error", error });
   }
 };
-*/

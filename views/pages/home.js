@@ -7,7 +7,7 @@ export const home = ({ title, products, nonce }) => {
     <title>CanvaSplash | ${title}</title>
     </head>
     <body>
-      ${nav}
+      ${nav({ title })}
         <div class="body">
           <div class="container" id="my-gallery">
             ${products.map((product) => `${card({ product })}`).join("")}
