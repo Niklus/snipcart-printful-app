@@ -63,6 +63,9 @@ const orderCompleted = async (ctx) => {
 
 const events = {
   "order.completed": orderCompleted,
+  "customauth:customer_updated": async (ctx) => {
+    console.log("customer updated");
+  },
 };
 
 const eventHandler = (ctx) => {

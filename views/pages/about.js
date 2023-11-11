@@ -9,9 +9,10 @@ export const about = ({ title, nonce }) => {
       <div class="body">
         <h2>About</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          CanvaSplash is a demo ecommerce store that sells prints of images on poster flags.
+          It uses snipcart to handle the ecommerce on the frontend and Printful to handle the printing and shipping.
+          The products are fetched from your printful account and displayed on the site.
+          When a customer places an order, the order is sent to Printful and the order is fulfilled.
         </p>
       </div>
     </body>
