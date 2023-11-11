@@ -40,7 +40,7 @@ const createOrder = async (body) => {
   }
 };
 
-// TODO: Implement this
+// TODO:
 /*const getPrintfulShippingRates = async (body) => {
   try {
     const { data } = await printfulRequest({

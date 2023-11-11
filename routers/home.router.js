@@ -1,5 +1,5 @@
 import { Router } from "../deps.js";
-import { homePage /*,resetDb*/ } from "../controllers/home.controller.js";
+import { homePage, resetDb } from "../controllers/home.controller.js";
 import cache from "../middlewares/cache.js";
 
 export const homeRouter = new Router();

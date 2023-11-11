@@ -40,13 +40,17 @@ const orderCompleted = async (ctx) => {
 
     console.log(body);
 
+    // Placeholder response
+    ctx.response.status = 200;
+    ctx.response.body = body;
+
+    // Create order in Printful
     /*const data = await printful.createOrder(body);
 
-    const { code, result } = data; // TODO: destruture results for other useful data
+    const { code } = data;
 
     if (code === 200) {
-      // Add order to database
-      // use DenoKV or sqliite
+      ctx.response.status = 200;
     }*/
   } catch (error) {
     console.error(error);
