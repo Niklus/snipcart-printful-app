@@ -44,14 +44,14 @@ const orderCompleted = async (ctx) => {
     ctx.response.status = 200;
     ctx.response.body = body;
 
-    // Create order in Printful
+    /* Create order in Printful
     const data = await printful.createOrder(body);
 
     const { code } = data;
 
     if (code === 200) {
       ctx.response.status = 200;
-    }
+    }*/
   } catch (error) {
     console.error(error);
     ctx.response.status = 500;
